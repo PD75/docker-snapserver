@@ -2,7 +2,7 @@ FROM debian:testing-slim
 
 RUN apt-get update && apt-get upgrade -y && apt-get install wget -y
 
-ARG SNAPCASTVERSION=0.20.0
+ARG SNAPCASTVERSION=0.22.0
 
 RUN wget 'https://github.com/badaix/snapcast/releases/download/v'$SNAPCASTVERSION'/snapserver_'$SNAPCASTVERSION'-1_amd64.deb'
 
@@ -14,6 +14,6 @@ RUN rm 'snapserver_'$SNAPCASTVERSION'-1_amd64.deb'
 
 RUN snapserver -v
 
-EXPOSE 1704 1705
+EXPOSE 1704 1705 1780
 
 ENTRYPOINT ["snapserver"]
